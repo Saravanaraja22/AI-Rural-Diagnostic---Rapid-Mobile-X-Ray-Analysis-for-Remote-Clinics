@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+vwen/
+env/
+.env
+
+# Web
+node_modules/
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/

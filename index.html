@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural X-Ray Diagnostic AI Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>MediScan AI: Rural Diagnostic</h1>
+            <p class="subtitle">Rapid Mobile X-Ray Analysis for Remote Clinics</p>
+        </header>
+
+        <div class="main-content">
+            <section class="upload-section">
+                <div class="drop-zone" id="drop-zone">
+                    <div class="upload-icon">📤</div>
+                    <p>Click or Drag X-Ray Image Here</p>
+                    <p style="font-size: 0.8rem; color: #64748b; margin-top: 0.5rem;">Supports JPG, PNG, DICOM (Simulated)</p>
+                    <input type="file" id="file-input" accept="image/*">
+                </div>
+                
+                <div id="file-preview-container" style="display: none;">
+                    <p style="font-weight: 600; margin-bottom: 0.5rem;">Selected File:</p>
+                    <p id="file-name" style="color: #00d2ff;"></p>
+                    <img id="preview" class="preview-img" src="" alt="X-Ray Preview">
+                </div>
+
+                <button class="analyze-btn" id="analyze-btn" disabled>
+                    <span>⚡ Run AI Analysis</span>
+                </button>
+            </section>
+
+            <section class="results-section">
+                <div class="status-indicator">
+                    <div class="pulse" id="status-pulse"></div>
+                    <span id="status-text">System Ready</span>
+                </div>
+
+                <div class="progress-bar-container" id="progress-container">
+                    <div class="progress-bar" id="progress-bar"></div>
+                </div>
+
+                <div id="diagnostic-report" class="diagnostic-card">
+                    <h2 id="report-diagnosis">...</h2>
+                    <div id="report-urgency-badge" class="badge">...</div>
+                    <p style="margin-top: 1.5rem; color: #cbd5e1; line-height: 1.6;" id="report-findings"></p>
+                    
+                    <h3 style="margin-top: 1.5rem; color: var(--primary-color);">Medical Recommendations</h3>
+                    <ul id="report-recommendations" style="margin-top: 0.5rem; padding-left: 1.2rem; line-height: 1.6; color: #cbd5e1;"></ul>
+                </div>
+
+                <div id="raw-json" class="json-output"></div>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
